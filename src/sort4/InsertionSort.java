@@ -17,10 +17,10 @@ public class InsertionSort {
             int j = i-1;
 
             while(j>=0 && key < arr[j]){
-                arr[j+1] = arr[j];
+                arr[j+1] = arr[j]; // 원래 i위치가 뒤덮여짐, 원래 i값은 key로 저장되있으므로
                 j--;
             }
-            arr[j+1] = key;
+            arr[j+1] = key; //원래 i값을 j+1에 치환
         }
     }
 

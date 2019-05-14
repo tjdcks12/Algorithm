@@ -2,8 +2,9 @@ package practice;
 
 public class NextPermutation {
 
+    static int loop = 0;
     public static void main(String[] args){
-        int[] x = {1,2,3};
+        int[] x = {4, 1, 5, 2, 3};
 
         do{
             for(int i=0;i<x.length;i++){
@@ -15,39 +16,21 @@ public class NextPermutation {
     }
 
     public static boolean nextPermutation(int[] arr){
-//        int i = arr.length-1;
-//        int j = arr.length-1;
-//
-//        while(i>0 && arr[i]>arr[i-1]) i--;
-//
-//        if(i<=0) return false;
-//
-//        while(arr[i-1] <= arr[j]) j--;
-//
-//        int tmp = arr[i-1];
-//        arr[i-1] = arr[j];
-//        arr[j] = tmp;
-//
-//        j = arr.length-1;
-//
-//        while(i>j){
-//            tmp = arr[i];
-//            arr[i] = arr[j];
-//            arr[j] = tmp;
-//            i++;
-//            j--;
-//        }
 
+
+        loop++;
         int i = arr.length - 1;
         int j = arr.length - 1;
         int temp;
-        StringBuilder result = new StringBuilder();
 
         while(i>0 && arr[i-1] >= arr[i])  i--;
 
         if(i <= 0) return false;
 
-        while(arr[j] <= arr[i-1]) j--;
+        while(arr[j] <= arr[i-1]) {
+            j--;
+            System.out.println("여기왔어");
+        }
 
         temp = arr[i-1];
         arr[i-1] = arr[j];
@@ -65,33 +48,4 @@ public class NextPermutation {
         return true;
     }
 
-//    public static boolean nextPermutation(int[] arr) {
-//        int i=arr.length-1;
-//        int j=arr.length-1;
-//        int tmp;
-//
-//        int result = 0;
-//
-//        while(i>0 && arr[i] > arr[i-1]) i--;
-//        if(i<=0) {
-//            System.out.println(-1);
-//            return false;
-//        }
-//
-//        while(arr[i-1] <= arr[j]) j--;
-//
-//        tmp = arr[i-1];
-//        arr[i-1] = arr[j];
-//        arr[j] = tmp;
-//
-//        j = arr.length-1;
-//        while(i<j) {
-//            tmp = arr[i];
-//            arr[i] = arr[j];
-//            arr[j] = tmp;
-//            i++;
-//            j--;
-//        }
-//        return true;
-//    }
 }
